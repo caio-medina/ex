@@ -7,6 +7,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="a2016_2.pooa.iff.br.myapplication.Cadastro_proprietario">
+    tools:context=".activity.Cadastro_proprietario">
 
 </RelativeLayout>
