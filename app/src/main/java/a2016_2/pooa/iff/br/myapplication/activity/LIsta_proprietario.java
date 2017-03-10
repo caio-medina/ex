@@ -24,6 +24,11 @@ public class LIsta_proprietario extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LIsta_proprietario.this, Cadastro_proprietario.class);
+                intent.putExtra("id",0);
+                intent.putExtra("nome","");
+                intent.putExtra("endereco","");
+                intent.putExtra("data","");
+                intent.putExtra("telefone","");
                 startActivity(intent);
 
             }
