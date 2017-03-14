@@ -71,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Salvar"
-        android:id="@+id/btOKprop"
+        android:id="@+id/btOKveiculo"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/txProprietario"
         android:layout_marginBottom="41dp" />
@@ -80,8 +80,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Alterar"
-        android:id="@+id/btAlterarprop"
-        android:layout_alignBottom="@+id/btOKprop"
+        android:id="@+id/btAlterarveiculo"
+        android:layout_alignBottom="@+id/btOKveiculo"
         android:layout_alignStart="@+id/etTelefone" />
 
     <Spinner
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/spinnerprop"
         android:layout_alignTop="@+id/txProprietario"
-        android:layout_toEndOf="@+id/btOKprop" />
+        android:layout_toEndOf="@+id/btOKveiculo" />
 
 
 </RelativeLayout>

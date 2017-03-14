@@ -78,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Salvar"
-        android:id="@+id/btOKprop"
+        android:id="@+id/btOKveiculo"
         android:layout_below="@+id/etData"
         android:layout_toEndOf="@+id/txProprietario" />
 
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="Alterar"
         android:id="@+id/btAlterarprop"
-        android:layout_alignBottom="@+id/btOKprop"
+        android:layout_alignBottom="@+id/btOKveiculo"
         android:layout_alignStart="@+id/etData"
         />
 </RelativeLayout>

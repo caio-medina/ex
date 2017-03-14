@@ -42,7 +42,7 @@ public class Cadastro_proprietario extends AppCompatActivity {
         telefone.setText(telefonep);
 
 
-        btsalvar = (Button) findViewById(R.id.btOKprop);
+        btsalvar = (Button) findViewById(R.id.btOKveiculo);
         btalterar = (Button) findViewById(R.id.btAlterarprop);
 
         if (id != 0) {
