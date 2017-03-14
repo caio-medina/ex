@@ -37,7 +37,9 @@
         <activity
             android:name=".activity.Lista_Veiculo"
             android:label="@string/title_activity_lista__veiculo"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.MainActivity$Cadastro_Veiculo" />
+        <activity android:name=".activity.Cadastro_Veiculo"></activity>
     </application>
 
 </manifest>

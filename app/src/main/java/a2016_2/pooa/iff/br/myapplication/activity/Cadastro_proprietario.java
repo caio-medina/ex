@@ -42,8 +42,8 @@ public class Cadastro_proprietario extends AppCompatActivity {
         telefone.setText(telefonep);
 
 
-        btsalvar = (Button) findViewById(R.id.btOK);
-        btalterar = (Button) findViewById(R.id.btAlterar);
+        btsalvar = (Button) findViewById(R.id.btOKprop);
+        btalterar = (Button) findViewById(R.id.btAlterarprop);
 
         if (id != 0) {
             btsalvar.setEnabled(false);

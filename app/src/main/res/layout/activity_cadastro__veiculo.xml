@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activity.Cadastro_proprietario">
+    tools:context=".activity.Cadastro_Veiculo">
 
     <EditText
         android:layout_width="wrap_content"
@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome"
+        android:text="Placa"
         android:id="@+id/txPlaca"
         android:layout_alignTop="@+id/etNome"
         android:layout_alignParentStart="true"
@@ -30,7 +30,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Endereço"
+        android:text="Modelo"
         android:id="@+id/txModelo"
         android:layout_below="@+id/etNome"
         android:layout_alignStart="@+id/txPlaca"
@@ -39,7 +39,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Telefone"
+        android:text="Ano"
         android:id="@+id/txAno"
         android:layout_centerVertical="true"
         android:layout_alignStart="@+id/txModelo" />
@@ -47,7 +47,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Data"
+        android:text="Proprietario"
         android:id="@+id/txProprietario"
         android:layout_below="@+id/txAno"
         android:layout_alignStart="@+id/txAno"
@@ -67,20 +67,14 @@
         android:layout_alignTop="@+id/txAno"
         android:layout_alignStart="@+id/etEndereco" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etData"
-        android:layout_alignTop="@+id/txProprietario"
-        android:layout_alignStart="@+id/etTelefone" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Salvar"
         android:id="@+id/btOKprop"
-        android:layout_below="@+id/etData"
-        android:layout_toEndOf="@+id/txProprietario" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/txProprietario"
+        android:layout_marginBottom="41dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -88,6 +82,14 @@
         android:text="Alterar"
         android:id="@+id/btAlterarprop"
         android:layout_alignBottom="@+id/btOKprop"
-        android:layout_alignStart="@+id/etData"
-        />
+        android:layout_alignStart="@+id/etTelefone" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerprop"
+        android:layout_alignTop="@+id/txProprietario"
+        android:layout_toEndOf="@+id/btOKprop" />
+
+
 </RelativeLayout>
