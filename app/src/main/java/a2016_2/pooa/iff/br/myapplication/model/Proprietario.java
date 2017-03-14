@@ -2,12 +2,17 @@ package a2016_2.pooa.iff.br.myapplication.model;
 
 import com.orm.SugarRecord;
 
+import java.util.ArrayList;
+
 /**
  * Created by user on 09/03/17.
  */
 public class Proprietario extends SugarRecord {
 
     private String nome, endereco, telefone, data_nascimento;
+    ArrayList<Veiculo> garagem;
+
+
 
     public Proprietario (){}
     public Proprietario(String nome, String endereco, String telefone, String data_nascimento) {
@@ -49,5 +54,13 @@ public class Proprietario extends SugarRecord {
 
     public void setData_nascimento(String data_nascimento) {
         this.data_nascimento = data_nascimento;
+    }
+
+    public ArrayList<Veiculo> getGaragem() {
+        return garagem;
+    }
+
+    public void setGaragem(ArrayList<Veiculo> garagem) {
+        this.garagem = garagem;
     }
 }

@@ -3,6 +3,7 @@ package a2016_2.pooa.iff.br.myapplication.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -20,7 +21,7 @@ public class Cadastro_proprietario extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro_proprietario);
 
 
-        Intent intent    = getIntent();
+        final Intent intent    = getIntent();
         id = (int) intent.getSerializableExtra("id");
 
         String nomep     = (String) intent.getSerializableExtra("nome");
@@ -42,6 +43,39 @@ public class Cadastro_proprietario extends AppCompatActivity {
 
 
         btsalvar = (Button) findViewById(R.id.btOK);
+        btalterar = (Button) findViewById(R.id.btAlterar);
+
+        if (id != 0) {
+            btsalvar.setEnabled(false);
+            btsalvar.setClickable(false);
+            btsalvar.setVisibility(View.INVISIBLE);
+        } else {
+            btalterar.setEnabled(false);
+            btalterar.setClickable(false);
+            btalterar.setVisibility(View.INVISIBLE);
+        }
+
+
+
+        btsalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Cadastro_proprietario.this, LIsta_proprietario.class);
+                salvar();
+                startActivity(intent);
+
+            }
+        });
+
+        btalterar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Cadastro_proprietario.this, LIsta_proprietario.class);
+                alterar();
+                startActivity(intent);
+
+            }
+        });
 
 
     }
@@ -58,5 +92,25 @@ public class Cadastro_proprietario extends AppCompatActivity {
         Proprietario p = new Proprietario(nome.getText().toString(), endereco.getText().toString(), telefone.getText().toString(), data.getText().toString());
 
         p.save();
+    }
+
+    public void alterar(){
+        Proprietario prop = Proprietario.findById(Proprietario.class, id);
+
+        EditText nome = (EditText) findViewById(R.id.etNome);
+
+        EditText endereco = (EditText) findViewById(R.id.etEndereco);
+
+        EditText data = (EditText) findViewById(R.id.etData);
+
+        EditText telefone = (EditText) findViewById(R.id.etTelefone);
+
+        prop.setNome(nome.getText().toString());
+        prop.setEndereco(endereco.getText().toString());
+        prop.setTelefone(telefone.getText().toString());
+        prop.setData_nascimento(data.getText().toString());
+
+    prop.save();
+    finish();
     }
 }

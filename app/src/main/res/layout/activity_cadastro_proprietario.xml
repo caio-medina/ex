@@ -77,9 +77,17 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OK"
+        android:text="Salvar"
         android:id="@+id/btOK"
         android:layout_below="@+id/etData"
-        android:layout_alignEnd="@+id/etData"
-        android:onClick="criarProprietario"/>
+        android:layout_toEndOf="@+id/textView4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alterar"
+        android:id="@+id/btAlterar"
+        android:layout_alignBottom="@+id/btOK"
+        android:layout_alignStart="@+id/etData"
+        />
 </RelativeLayout>
