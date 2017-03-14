@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="title_activity_lista_proprietario">LIsta_proprietario</string>
+    <string name="title_activity_lista__veiculo">Lista_Veiculo</string>
 </resources>

@@ -21,6 +21,7 @@
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="a2016_2.pooa.iff.br.myapplication" />
+
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +33,10 @@
         <activity
             android:name=".activity.LIsta_proprietario"
             android:label="@string/title_activity_lista_proprietario"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.Lista_Veiculo"
+            android:label="@string/title_activity_lista__veiculo"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
