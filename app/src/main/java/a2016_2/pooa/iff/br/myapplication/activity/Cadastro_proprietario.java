@@ -42,7 +42,7 @@ public class Cadastro_proprietario extends AppCompatActivity {
         telefone.setText(telefonep);
 
 
-        btsalvar = (Button) findViewById(R.id.btOKveiculo);
+        btsalvar = (Button) findViewById(R.id.btOKprop);
         btalterar = (Button) findViewById(R.id.btAlterarprop);
 
         if (id != 0) {
@@ -110,7 +110,7 @@ public class Cadastro_proprietario extends AppCompatActivity {
         prop.setTelefone(telefone.getText().toString());
         prop.setData_nascimento(data.getText().toString());
 
-    prop.save();
-    finish();
+        prop.save();
+        finish();
     }
 }

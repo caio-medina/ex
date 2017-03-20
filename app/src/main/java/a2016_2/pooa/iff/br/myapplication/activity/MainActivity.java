@@ -30,4 +30,11 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_cadastro__veiculo);
         }
     }
+
+    public void chamaTelaVeiculo(View v) {
+        Toast.makeText(this, "Botão funcionando", Toast.LENGTH_SHORT);
+
+        Intent intent = new Intent(MainActivity.this, Lista_Veiculo.class);
+        startActivity(intent);
+    }
 }

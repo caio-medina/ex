@@ -7,34 +7,27 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activity.Cadastro_Veiculo">
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etNome"
-        android:layout_marginTop="55dp"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/txPlaca"
-        android:layout_marginStart="115dp" />
+    tools:context=".activity.Cadastro_Veiculo"
+    android:background="@color/background">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Placa"
         android:id="@+id/txPlaca"
-        android:layout_alignTop="@+id/etNome"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="38dp" />
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+        android:layout_alignTop="@+id/etPlaca"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Modelo"
         android:id="@+id/txModelo"
-        android:layout_below="@+id/etNome"
-        android:layout_alignStart="@+id/txPlaca"
-        android:layout_marginTop="39dp" />
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+        android:layout_below="@+id/txPlaca"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,7 +35,8 @@
         android:text="Ano"
         android:id="@+id/txAno"
         android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/txModelo" />
+        android:layout_alignStart="@+id/txModelo"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -51,21 +45,24 @@
         android:id="@+id/txProprietario"
         android:layout_below="@+id/txAno"
         android:layout_alignStart="@+id/txAno"
-        android:layout_marginTop="65dp" />
+        android:layout_marginTop="65dp"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/etEndereco"
+        android:id="@+id/etModelo"
         android:layout_alignTop="@+id/txModelo"
-        android:layout_alignStart="@+id/etNome" />
+        android:layout_alignEnd="@+id/spinnerprop"
+        android:layout_alignStart="@+id/spinnerprop" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/etTelefone"
+        android:id="@+id/etAno"
         android:layout_alignTop="@+id/txAno"
-        android:layout_alignStart="@+id/etEndereco" />
+        android:layout_alignStart="@+id/etModelo"
+        android:layout_alignEnd="@+id/spinnerprop" />
 
     <Button
         android:layout_width="wrap_content"
@@ -82,14 +79,25 @@
         android:text="Alterar"
         android:id="@+id/btAlterarveiculo"
         android:layout_alignBottom="@+id/btOKveiculo"
-        android:layout_alignStart="@+id/etTelefone" />
+        android:layout_alignStart="@+id/etAno" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinnerprop"
         android:layout_alignTop="@+id/txProprietario"
-        android:layout_toEndOf="@+id/btOKveiculo" />
+        android:layout_toEndOf="@+id/txProprietario" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPlaca"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="68dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/etModelo"
+        android:layout_toEndOf="@+id/txProprietario"
+        android:layout_alignStart="@+id/etModelo" />
 
 
 </RelativeLayout>
