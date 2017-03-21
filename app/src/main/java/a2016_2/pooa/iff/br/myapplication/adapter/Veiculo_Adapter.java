@@ -36,12 +36,12 @@ import a2016_2.pooa.iff.br.myapplication.model.Veiculo;
             TextView nome = (TextView) rowView.findViewById(R.id.tvllvPlaca);
             TextView endereco = (TextView) rowView.findViewById(R.id.tvllvModelo);
             TextView telefone = (TextView) rowView.findViewById(R.id.tvllvAno);
-            TextView data = (TextView) rowView.findViewById(R.id.tvllvProprietario);
+            TextView prop = (TextView) rowView.findViewById(R.id.tvllvProprietario);
 
             nome.setText(carros.get(position).getPlaca());
             endereco.setText(carros.get(position).getModelo());
             telefone.setText(carros.get(position).getAno());
-            data.setText("um dono");
+            //prop.setText(carros.get(position).getProprietario().getNome());
             return rowView;
         }
 }

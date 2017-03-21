@@ -4,8 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
 
 import a2016_2.pooa.iff.br.myapplication.R;
 import a2016_2.pooa.iff.br.myapplication.model.Proprietario;
@@ -14,6 +18,7 @@ import a2016_2.pooa.iff.br.myapplication.model.Veiculo;
 public class Cadastro_Veiculo extends AppCompatActivity {
 
     Button btsalvar,btalterar;
+    Spinner spProp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,23 +27,38 @@ public class Cadastro_Veiculo extends AppCompatActivity {
         final Intent intent = getIntent();
         final int id = (int) intent.getSerializableExtra("id");
 
-        String nomep = (String) intent.getSerializableExtra("nome");
-        String enderecop = (String) intent.getSerializableExtra("endereco");
-        String telefonep = (String) intent.getSerializableExtra("telefone");
-
-        EditText nome = (EditText) findViewById(R.id.etPlaca);
-        nome.setText(nomep);
-
-        EditText endereco = (EditText) findViewById(R.id.etModelo);
-        endereco.setText(enderecop);
+        //String nomep = (String) intent.getSerializableExtra("nome");
+        //String enderecop = (String) intent.getSerializableExtra("endereco");
+        //String telefonep = (String) intent.getSerializableExtra("telefone");
 
 
-        EditText telefone = (EditText) findViewById(R.id.etAno);
-        telefone.setText(telefonep);
+        final ArrayList<Proprietario> locais  = (ArrayList) Proprietario.listAll(Proprietario.class);
+            ArrayAdapter<Proprietario> adapter = new ArrayAdapter<Proprietario>(this, android.R.layout.simple_spinner_item, locais);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+            spProp = (Spinner) findViewById(R.id.spinnerprop);
+            spProp.setAdapter(adapter);
 
 
-        btsalvar = (Button) findViewById(R.id.btOKveiculo);
-        btalterar = (Button) findViewById(R.id.btAlterarveiculo);
+            btsalvar = (Button) findViewById(R.id.btOKveiculo);
+            btalterar = (Button) findViewById(R.id.btAlterarveiculo);
+
+
+            //Proprietario prop = ((Proprietario)spProp.getSelectedItem());
+            //Veiculo carro = new Veiculo(prop, etPlaca.getText().toString(), etModelo.getText().toString(), etAno.getText().toString());
+
+
+            //carro.save();
+            //Intent intent = new Intent(Cadastro_Veiculo.this, Cadastro_Veiculo.class);
+            //startActivity(intent);
+
+            //carro.setProprietario((Proprietario)spProp.getSelectedItem());
+
+            //carro.setPlaca(etplaca.getText().toString());
+            //carro.setModelo(etmodelo.getText().toString());
+            //carro.setAno(etAno.getText().toString());
+
+
 
         if (id != 0) {
             btsalvar.setEnabled(false);
@@ -87,6 +107,7 @@ public class Cadastro_Veiculo extends AppCompatActivity {
 
                 EditText ano = (EditText) findViewById(R.id.etAno);
 
+
                 veiculo.setPlaca(placa.getText().toString());
                 veiculo.setModelo(modelo.getText().toString());
                 veiculo.setAno(ano.getText().toString());
@@ -96,7 +117,6 @@ public class Cadastro_Veiculo extends AppCompatActivity {
                 finish();
             }
         });
-
 
 
     }
