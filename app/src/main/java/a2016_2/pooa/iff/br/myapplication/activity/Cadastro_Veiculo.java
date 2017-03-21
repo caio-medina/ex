@@ -19,13 +19,12 @@ public class Cadastro_Veiculo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro__veiculo);
 
-        final Intent intent    = getIntent();
-        int id = (int) intent.getSerializableExtra("id");
+        final Intent intent = getIntent();
+        final int id = (int) intent.getSerializableExtra("id");
 
-        String nomep     = (String) intent.getSerializableExtra("nome");
+        String nomep = (String) intent.getSerializableExtra("nome");
         String enderecop = (String) intent.getSerializableExtra("endereco");
-        String datap     = (String) intent.getSerializableExtra("data");
-        String telefonep  = (String)  intent.getSerializableExtra("telefone");
+        String telefonep = (String) intent.getSerializableExtra("telefone");
 
         EditText nome = (EditText) findViewById(R.id.etPlaca);
         nome.setText(nomep);
@@ -51,61 +50,55 @@ public class Cadastro_Veiculo extends AppCompatActivity {
             btalterar.setVisibility(View.INVISIBLE);
         }
 
+
+
+
+
         btsalvar.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Cadastro_Veiculo.this, Lista_Veiculo.class);
-                salvar();
-                startActivity(intent);
 
+                EditText placa = (EditText) findViewById(R.id.etPlaca);
+
+                EditText modelo = (EditText) findViewById(R.id.etModelo);
+
+                EditText ano = (EditText) findViewById(R.id.etAno);
+
+                Veiculo veiculo = new Veiculo(null, placa.getText().toString(), modelo.getText().toString(), ano.getText().toString());
+
+                Intent intent = new Intent(Cadastro_Veiculo.this, Lista_Veiculo.class);
+                startActivity(intent);
+                finish();
+                veiculo.save();
             }
         });
 
         btalterar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Cadastro_Veiculo.this, Lista_Veiculo.class);
-                alterar();
-                startActivity(intent);
 
+
+                Veiculo veiculo = Veiculo.findById(Veiculo.class, id);
+
+                EditText placa = (EditText) findViewById(R.id.etPlaca);
+
+                EditText modelo = (EditText) findViewById(R.id.etModelo);
+
+                EditText ano = (EditText) findViewById(R.id.etAno);
+
+                veiculo.setPlaca(placa.getText().toString());
+                veiculo.setModelo(modelo.getText().toString());
+                veiculo.setAno(ano.getText().toString());
+
+
+                veiculo.save();
+                finish();
             }
         });
 
-    public void alterar(){
-        Veiculo veiculo = Veiculo.findById(Veiculo.class, id);
 
-        EditText placa = (EditText) findViewById(R.id.etNome);
 
-        EditText endereco = (EditText) findViewById(R.id.etEndereco);
-
-        EditText data = (EditText) findViewById(R.id.etData);
-
-        EditText telefone = (EditText) findViewById(R.id.etTelefone);
-
-        prop.setNome(nome.getText().toString());
-        prop.setEndereco(endereco.getText().toString());
-        prop.setTelefone(telefone.getText().toString());
-        prop.setData_nascimento(data.getText().toString());
-
-        prop.save();
-        finish();
     }
-
-
-
-
-    public void salvar() {
-
-        EditText nome = (EditText) findViewById(R.id.etPlaca);
-
-        EditText endereco = (EditText) findViewById(R.id.etModelo);
-
-        EditText telefone = (EditText) findViewById(R.id.etAno);
-        Veiculo p = new Veiculo(null, nome.getText().toString(), endereco.getText().toString(), telefone.getText().toString());
-
-        p.save();
-    }
-
-
 
 }

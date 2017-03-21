@@ -17,7 +17,7 @@
         android:id="@+id/txPlaca"
         android:textSize="@dimen/abc_action_button_min_width_overflow_material"
         android:layout_alignTop="@+id/etPlaca"
-        android:layout_alignParentStart="true" />
+        android:layout_alignStart="@+id/txModelo" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,28 +25,39 @@
         android:text="Modelo"
         android:id="@+id/txModelo"
         android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-        android:layout_below="@+id/txPlaca"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="26dp" />
+        android:layout_marginLeft="31dp"
+        android:layout_above="@+id/txAno"
+        android:layout_marginBottom="40dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ano"
         android:id="@+id/txAno"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/txModelo"
-        android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+        android:layout_marginLeft="31dp"
+        android:layout_marginBottom="40dp"
+        android:layout_above="@+id/txProprietario"
+         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Proprietario"
         android:id="@+id/txProprietario"
-        android:layout_below="@+id/txAno"
-        android:layout_alignStart="@+id/txAno"
-        android:layout_marginTop="65dp"
-        android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+        android:layout_above="@+id/btOKveiculo"
+        android:layout_marginBottom="67dp"
+        android:layout_marginLeft="31dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPlaca"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="34dp"
+        android:layout_alignEnd="@+id/etModelo"
+        android:layout_alignStart="@+id/etModelo" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -54,6 +65,7 @@
         android:id="@+id/etModelo"
         android:layout_alignTop="@+id/txModelo"
         android:layout_alignEnd="@+id/spinnerprop"
+        android:layout_toEndOf="@+id/txModelo"
         android:layout_alignStart="@+id/spinnerprop" />
 
     <EditText
@@ -61,8 +73,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/etAno"
         android:layout_alignTop="@+id/txAno"
-        android:layout_alignStart="@+id/etModelo"
-        android:layout_alignEnd="@+id/spinnerprop" />
+        android:layout_alignEnd="@+id/spinnerprop"
+        android:layout_alignStart="@+id/spinnerprop" />
 
     <Button
         android:layout_width="wrap_content"
@@ -88,16 +100,7 @@
         android:layout_alignTop="@+id/txProprietario"
         android:layout_toEndOf="@+id/txProprietario" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etPlaca"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="68dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/etModelo"
-        android:layout_toEndOf="@+id/txProprietario"
-        android:layout_alignStart="@+id/etModelo" />
+
 
 
 </RelativeLayout>

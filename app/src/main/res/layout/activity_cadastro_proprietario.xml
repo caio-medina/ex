@@ -16,8 +16,8 @@
         android:id="@+id/etNome"
         android:layout_marginTop="55dp"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/txPlaca"
-        android:layout_marginStart="115dp" />
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/txModelo" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,7 +26,8 @@
         android:id="@+id/txPlaca"
         android:layout_alignTop="@+id/etNome"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="38dp" />
+        android:layout_marginStart="38dp"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +36,8 @@
         android:id="@+id/txModelo"
         android:layout_below="@+id/etNome"
         android:layout_alignStart="@+id/txPlaca"
-        android:layout_marginTop="39dp" />
+        android:layout_marginTop="39dp"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -43,53 +45,58 @@
         android:text="Telefone"
         android:id="@+id/txAno"
         android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/txModelo" />
+        android:layout_alignStart="@+id/txModelo"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Data"
         android:id="@+id/txProprietario"
+        android:layout_marginTop="31dp"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material"
         android:layout_below="@+id/txAno"
-        android:layout_alignStart="@+id/txAno"
-        android:layout_marginTop="65dp" />
+        android:layout_alignStart="@+id/txAno" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etEndereco"
         android:layout_alignTop="@+id/txModelo"
-        android:layout_alignStart="@+id/etNome" />
+        android:layout_alignStart="@+id/etNome"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etTelefone"
         android:layout_alignTop="@+id/txAno"
-        android:layout_alignStart="@+id/etEndereco" />
+        android:layout_alignStart="@+id/etEndereco"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etData"
         android:layout_alignTop="@+id/txProprietario"
-        android:layout_alignStart="@+id/etTelefone" />
+        android:layout_alignStart="@+id/etTelefone"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Salvar"
         android:id="@+id/btOKprop"
-        android:layout_below="@+id/etData"
-        android:layout_toEndOf="@+id/txProprietario" />
+        android:layout_alignTop="@+id/btAlterarprop"
+        android:layout_alignEnd="@+id/txPlaca" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Alterar"
         android:id="@+id/btAlterarprop"
-        android:layout_alignBottom="@+id/btOKprop"
-        android:layout_alignStart="@+id/etData"
-        />
+        android:layout_below="@+id/etData"
+        android:layout_toEndOf="@+id/txModelo"
+        android:layout_marginTop="25dp" />
 
 </RelativeLayout>
